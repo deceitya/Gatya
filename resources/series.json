@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "ピッケルガチャ",
+        "cost": 500,
+        "items": [
+            {
+                "id": 270,
+                "meta": 50,
+                "count": 1,
+                "name": "壊れかけの木のピッケル",
+                "description": "ガチャ限のピッケルだよ",
+                "enchants": [
+                    {
+                        "id": 17,
+                        "level": 6
+                    }
+                ],
+                "chance": 50
+            },
+            {
+                "id": 274,
+                "meta": 0,
+                "count": 1,
+                "name": null,
+                "description": null,
+                "enchants": [],
+                "chance": 49.9
+            },
+            {
+                "id": 278,
+                "meta": 0,
+                "count": 1,
+                "name": "伝説のピッケル",
+                "description": "0.1パーセントの確率で出るレアアイテム",
+                "enchants": [
+                    {
+                        "id": 17,
+                        "level": 3
+                    },
+                    {
+                        "id": 15,
+                        "level": 5
+                    }
+                ],
+                "chance": 0.1
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "ストーンカッター100％",
+        "cost": 100,
+        "items": [
+            {
+                "id": 245,
+                "meta": 0,
+                "count": 1,
+                "name": null,
+                "description": null,
+                "enchants": [],
+                "chance": 100
+            }
+        ]
+    }
+]

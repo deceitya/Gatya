@@ -1,0 +1,10 @@
+name: Gatya
+main: Deceitya\Gatya\Main
+version: 1.0.0
+api: 3.11.5
+load: POSTWORLD
+author: deceitya
+description: ガチャプラグイン
+website: https://github.com/deceitya/Gatya
+depend:
+  - EconomyAPI
