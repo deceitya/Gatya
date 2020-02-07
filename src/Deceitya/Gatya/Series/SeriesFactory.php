@@ -7,7 +7,7 @@ use pocketmine\item\enchantment\EnchantmentInstance;
 
 class SeriesFactory
 {
-    /** @var array */
+    /** @var array[string|int=>Series] */
     private static $series = [];
 
     public static function init(string $file)
@@ -47,5 +47,14 @@ class SeriesFactory
     {
         self::$series[$series->getId()] = $series;
         self::$series[$series->getName()] = $series;
+    }
+
+    public static function getAllSeries(): \Generator
+    {
+        foreach (self::$series as $key => $series) {
+            if (is_string($key)) {
+                yield $series;
+            }
+        }
     }
 }

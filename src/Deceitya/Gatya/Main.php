@@ -17,7 +17,7 @@ class Main extends PluginBase
         $this->saveResource('series.json');
         MessageContainer::load($this);
         SeriesFactory::init("{$this->getDataFolder()}series.json");
-
+        $this->checkChance();
         $this->registerCommand();
     }
 
@@ -36,5 +36,15 @@ class Main extends PluginBase
             )
         );
         $this->getServer()->getCommandMap()->register('gatya', new GatyaCommand($this));
+    }
+
+    private function checkChance()
+    {
+        foreach (SeriesFactory::getAllSeries() as $series) {
+            if ($series->getChanceSum() !== 100.0) {
+                $this->getLogger()->warning(MessageContainer::get('chance_invalid', $series->getName()));
+                $this->setEnabled(false);
+            }
+        }
     }
 }

@@ -43,6 +43,15 @@ class Series
         return $this->cost;
     }
 
+    public function getChanceSum(): float
+    {
+        $sum = 0.0;
+        foreach ($this->items as $data) {
+            $sum += $data[0];
+        }
+        return $sum;
+    }
+
     public function getItem(float $percent): Item
     {
         $prev = 0.0;

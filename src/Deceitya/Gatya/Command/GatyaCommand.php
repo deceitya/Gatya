@@ -33,6 +33,8 @@ class GatyaCommand extends PluginCommand
 
         if (count($args) < 1) {
             $sender->sendForm(new SeriesForm());
+
+            return true;
         }
 
         try {
@@ -42,17 +44,17 @@ class GatyaCommand extends PluginCommand
 
             for ($i = 0; $i < $count; $i++) {
                 if ($api->myMoney($sender) < $series->getCost()) {
-                    $sender->sendMessage(MessageContainer::get('command.gatya.no_money'));
+                    $sender->sendMessage(MessageContainer::get('command.gt.no_money'));
 
                     return true;
                 }
 
                 $item = $series->getItem(mt_rand(0, 10000) / 100);
                 if (empty($sender->getInventory()->addItem($item))) {
-                    $sender->sendMessage(MessageContainer::get('command.gatya.result', $item->getCustomName() ?: $item->getName()));
+                    $sender->sendMessage(MessageContainer::get('command.gt.result', $item->getCustomName() ?: $item->getName()));
                     $api->reduceMoney($sender, $series->getCost());
                 } else {
-                    $sender->sendMessage(MessageContainer::get('command.gatya.no_space'));
+                    $sender->sendMessage(MessageContainer::get('command.gt.no_space'));
 
                     return true;
                 }
@@ -60,7 +62,7 @@ class GatyaCommand extends PluginCommand
 
             return true;
         } catch (\Exception $e) {
-            $sender->sendMessage(MessageContainer::get('command.gatya.no_series'));
+            $sender->sendMessage(MessageContainer::get('command.gt.no_series'));
 
             return true;
         }

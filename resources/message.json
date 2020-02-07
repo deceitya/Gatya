@@ -1,0 +1,29 @@
+{
+    "command": {
+        "gt": {
+            "description": "ガチャを回します",
+            "usage": "/gt <id|name> [count]",
+            "result": "&l&e%1 &rが当たりました！",
+            "no_money": "&cお金が足りません。",
+            "no_space": "&cインベントリに空きがありません。",
+            "no_series": "&c存在しないガチャです。"
+        }
+    },
+    "form": {
+        "series": {
+            "title": "&lガチャ",
+            "description": "回すガチャを選んでください。"
+        },
+        "input": {
+            "title": "&lガチャ",
+            "label1": "%1 (ID:%2)",
+            "label2": "1回 %1%2",
+            "input": {
+                "text": "ガチャを回す回数を設定して下さい。",
+                "placeholder": "整数",
+                "default": "1"
+            }
+        }
+    },
+    "chance_invalid": "%1 のchanceの値の合計が100ではないため、本プラグインは機能しません。"
+}
